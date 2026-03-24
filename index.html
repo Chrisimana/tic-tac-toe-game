@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic Tac Toe - Frontend</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Tic Tac Toe</h1>
+    <div class="controls">
+      <label>
+        Mode:
+        <select id="mode">
+          <option value="2p">2 Pemain</option>
+          <option value="1p">1 Pemain (AI)</option>
+        </select>
+      </label>
+      <label>
+        Kesulitan:
+        <select id="difficulty" disabled>
+          <option value="easy">Mudah</option>
+          <option value="medium">Sedang</option>
+          <option value="hard">Susah</option>
+        </select>
+      </label>
+    </div>
+    <p id="status">Giliran: X</p>
+    <div id="board" class="board"></div>
+    <button id="reset">Reset Game</button>
+    <div class="info">
+      <p>Petunjuk: Klik kotak untuk meletakkan X atau O. Siapa yang berhasil 3 beruntun menang.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+:root {
+  --bg: #f4f4f9;
+  --card: #ffffff;
+  --text: #222;
+  --accent: #2b6cb0;
+  --danger: #e53e3e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: min(480px, calc(100% - 32px));
+  background: var(--card);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+}
+
+h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+#status {
+  font-weight: 600;
+  text-align: center;
+  margin: 10px 0 20px;
+  color: var(--accent);
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.controls label {
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.controls select {
+  margin-left: 8px;
+  padding: 5px 8px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.cell {
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  background: #e2e8f0;
+  border: 2px solid #cbd5e1;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.cell:hover {
+  transform: scale(1.02);
+  border-color: var(--accent);
+}
+
+.cell.disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.cell-content {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 800;
+}
+
+button {
+  width: 100%;
+  margin-top: 18px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #1a4f86;
+}
+
+.info {
+  margin-top: 14px;
+  color: #555;
+  font-size: 0.95rem;
+  text-align: center;
+}
