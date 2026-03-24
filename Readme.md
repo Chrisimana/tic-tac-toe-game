@@ -171,48 +171,6 @@ graph TD
     D --> Z[resetGame Function]
 ```
 
-### Diagram Alur Aplikasi
-
-```mermaid
-graph TD
-    A[Halaman Dimuat] --> B[resetGame]
-    B --> C[Board kosong]
-    B --> D[currentPlayer = X]
-    B --> E[playing = true]
-    
-    F[User klik kotak] --> G[onCellClick]
-    G --> H{playing && board kosong && (mode=2p atau giliran X)}
-    H -->|Tidak| I[Abort]
-    H -->|Ya| J[board[index] = currentPlayer]
-    J --> K[renderBoard]
-    K --> L[processTurn]
-    
-    L --> M{getWinner?}
-    M -->|Ada pemenang| N[playing = false]
-    N --> O[Tampilkan pemenang]
-    
-    M -->|Tidak ada pemenang| P{Board penuh?}
-    P -->|Ya| Q[playing = false]
-    Q --> R[Tampilkan Seri]
-    
-    P -->|Tidak| S[currentPlayer = ganti giliran]
-    S --> T[Update status]
-    
-    T --> U{mode === 1p && playing && currentPlayer === O}
-    U -->|Ya| V[aiMove]
-    U -->|Tidak| W[Selesai]
-    
-    V --> X{getAIMove}
-    X --> Y[Difficulty = easy: randomChoice]
-    X --> Z[Difficulty = medium: 50% random, 50% minimax]
-    X --> AA[Difficulty = hard: minimaxMove]
-    
-    Y --> AB[board[index] = O]
-    Z --> AB
-    AA --> AB
-    AB --> K
-```
-
 ### Diagram Alur Minimax
 
 ```mermaid
