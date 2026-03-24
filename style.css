@@ -98,6 +98,14 @@ h1 {
   font-weight: 800;
 }
 
+.cell-content.x {
+  color: #e53e3e; /* merah untuk X */
+}
+
+.cell-content.o {
+  color: #2b6cb0; /* biru untuk O */
+}
+
 button {
   width: 100%;
   margin-top: 18px;

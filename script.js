@@ -39,7 +39,7 @@ function renderBoard() {
     cell.disabled = !playing || Boolean(value);
 
     const content = document.createElement("div");
-    content.className = "cell-content";
+    content.className = "cell-content" + (value ? ` ${value.toLowerCase()}` : "");
     content.textContent = value || "";
 
     cell.appendChild(content);
